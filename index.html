@@ -228,25 +228,21 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
 
 <!-- VIEW 1: OBSERVATIONS -->
 <div id="view-observations" class="view active">
-  <div class="hero">
-    <div class="hero-chip">🔍 From Real Operator UAT and Integration Work</div>
-    <h1>I spent 2 years integrating Toast. Here is what <em>actually breaks</em> in production.</h1>
-    <p class="hero-sub">Direct UAT with real restaurant operators. Production failures personally investigated. 2 years seeing what breaks every night at end of day close.</p>
-    <div class="hero-pills">
-      <div class="hero-pill"><span class="hero-pill-val">2 yrs</span><span class="hero-pill-label">Toast integration</span></div>
-      <div class="hero-pill"><span class="hero-pill-val">10</span><span class="hero-pill-label">POS systems integrated</span></div>
-      <div class="hero-pill"><span class="hero-pill-val">3 days</span><span class="hero-pill-label">Operator reconciliation pain</span></div>
-      <div class="hero-pill"><span class="hero-pill-val">1 idea</span><span class="hero-pill-label">Nobody has built yet</span></div>
-    </div>
-    <div class="hero-btns">
-      <button class="btn btn-toast" onclick="goTo('closenight')">See Close Night Mode &#8594;</button>
-      <button class="btn btn-ghost" onclick="goTo('report')">See Report Fixed</button>
+
+  <!-- CLOSING STATEMENT FIRST -->
+  <div style="background:linear-gradient(135deg,#1E293B,#0F172A);border-radius:var(--radius-lg);padding:36px 44px;margin-bottom:28px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--toast);margin-bottom:12px;">Why I Am Applying to Toast</div>
+    <p style="font-size:20px;color:white;line-height:1.6;max-width:740px;font-weight:500;">I have spent my career in restaurant technology. I have integrated Toast and nine other POS systems. I have worked directly with restaurant operators at end of day close. The most common thing I heard was not about features. It was <em style="color:var(--toast);font-style:normal;">my numbers are not matching and I do not know why.</em></p>
+    <p style="font-size:15px;color:#94A3B8;line-height:1.7;max-width:700px;margin-top:14px;">I know exactly why that happens. I know which deductions are missing from which section of the report. I know that the EOD total changes depending on when you print it. I know that kiosk orders go missing. I know that UberEats fees never reach the POS. And I built working prototypes that fix all of it.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">
+      <button class="btn btn-toast" onclick="goTo('closenight')">Close Night Mode &#8594;</button>
+      <button class="btn" style="background:transparent;border:1.5px solid rgba(255,255,255,0.5);color:white;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;border-radius:var(--radius-sm);font-family:inherit;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'" onclick="goTo('eod')">EOD Report Fixed &#8594;</button>
     </div>
   </div>
 
-  <div class="eyebrow"><span></span>6 Real Findings</div>
+  <div class="eyebrow"><span></span>9 Real Findings</div>
   <h2 class="pt">What Breaks at End of Day</h2>
-  <p class="ps">Scannable. Every finding in 10 seconds.</p>
+  <p class="ps">From working directly with restaurant operators and years of POS integration work across 10 systems. Each row shows what the operator experiences and what they should experience instead.</p>
 
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
 
@@ -254,12 +250,12 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
       <div style="font-size:26px;text-align:center;">📦</div>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">UberEats platform fees not passed to Toast</div>
-        <div style="font-size:12px;color:var(--gray-500);">Toast shows gross order value. Bank receives net. Operator spends 30-45 min investigating the gap every night.</div>
+        <div style="font-size:12px;color:var(--gray-500);">Toast shows gross order value. Bank receives net. Operator spends 30-45 min every night trying to explain a gap that should not exist.</div>
         <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Found during operator UAT</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
         <span class="badge badge-red">Critical</span>
-        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Fix: Auto-explain gap</div>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Operator closes in 2 min, not 45</div>
       </div>
     </div>
 
@@ -267,38 +263,77 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
       <div style="font-size:26px;text-align:center;">📋</div>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">3 days to reconcile one week into Xero</div>
-        <div style="font-size:12px;color:var(--gray-500);">Operator copied numbers from Toast into Xero by hand. Xero sync did not include marketplace net revenue. 144 days a year lost.</div>
+        <div style="font-size:12px;color:var(--gray-500);">Marketplace net revenue not included in Xero sync. Operator copies numbers by hand. 144 days a year spent on data entry.</div>
         <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Direct UAT with large restaurant client</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
         <span class="badge badge-red">Critical</span>
-        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Fix: Auto-sync at close</div>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Xero syncs automatically at close</div>
       </div>
     </div>
 
     <div style="display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:16px 20px;border-left:4px solid var(--red);box-shadow:var(--shadow);">
-      <div style="font-size:26px;text-align:center;">⚡</div>
+      <div style="font-size:26px;text-align:center;">🔢</div>
       <div>
-        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Payment confirmed but not recorded</div>
-        <div style="font-size:12px;color:var(--gray-500);">Webhook failure. Payment made. System showed unpaid. Escalated to me personally. Had to manually verify before reaching engineering.</div>
-        <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Production failure I personally investigated</div>
+        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Two different Net Sales figures on the same EOD printout</div>
+        <div style="font-size:12px;color:var(--gray-500);">One section deducts transaction fees. Another does not. Same label, two different calculations. Operator does not know which number to give their accountant.</div>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">From real operator escalation during integration work</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
         <span class="badge badge-red">Critical</span>
-        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Fix: Webhook monitoring</div>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">One number. Every deduction labelled.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:16px 20px;border-left:4px solid var(--red);box-shadow:var(--shadow);">
+      <div style="font-size:26px;text-align:center;">🖨️</div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">EOD report shows different totals when reprinted next day</div>
+        <div style="font-size:12px;color:var(--gray-500);">Third party, cancelled, and refunded orders excluded same day but included on reprint. Same date, different numbers. Accountant cannot reconcile.</div>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Observed across POS integrations</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        <span class="badge badge-red">Critical</span>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Report frozen at close. Same every time.</div>
       </div>
     </div>
 
     <div style="display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:16px 20px;border-left:4px solid var(--amber);box-shadow:var(--shadow);">
       <div style="font-size:26px;text-align:center;">💰</div>
       <div>
-        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Tips count differently across channels</div>
-        <div style="font-size:12px;color:var(--gray-500);">Card tips adjusted after payment. Cash tips declared manually. UberEats tips not passed to Toast. Three counts that never match at end of day.</div>
+        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Tips shown as one number with no breakdown</div>
+        <div style="font-size:12px;color:var(--gray-500);">Card tips adjusted after payment. Cash tips declared manually. Marketplace tips not passed to POS. Three sources, one total, no explanation.</div>
         <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Found during operator UAT</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
         <span class="badge badge-amber">High</span>
-        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Fix: Unified tips view</div>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Card, cash, and staff breakdown in one view</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:16px 20px;border-left:4px solid var(--amber);box-shadow:var(--shadow);">
+      <div style="font-size:26px;text-align:center;">📱</div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Kiosk and third party orders missing from EOD entirely</div>
+        <div style="font-size:12px;color:var(--gray-500);">EOD report built around POS only. Kiosk orders sync separately and do not appear. Entire order channels invisible to the reconciliation.</div>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Observed across POS integrations</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        <span class="badge badge-amber">High</span>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">All sources shown with per-channel subtotal</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:16px 20px;border-left:4px solid var(--amber);box-shadow:var(--shadow);">
+      <div style="font-size:26px;text-align:center;">💳</div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Card payments showing zero after offline sync conflict</div>
+        <div style="font-size:12px;color:var(--gray-500);">Order paid offline from multiple devices. On reconnect, one device overwrote the others. EOD captured the wrong state with no warning.</div>
+        <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">Observed in multi-device POS environments</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        <span class="badge badge-amber">High</span>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Conflict flagged automatically before close</div>
       </div>
     </div>
 
@@ -306,25 +341,25 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
       <div style="font-size:26px;text-align:center;">🚫</div>
       <div>
         <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Hard stop errors with no path forward</div>
-        <div style="font-size:12px;color:var(--gray-500);">Red error. Blank page. No explanation. No alternative. Manager stuck at 11pm with nowhere to go.</div>
+        <div style="font-size:12px;color:var(--gray-500);">Red error. Blank page. No explanation of why. No suggestion of what to do instead. Manager at 11pm with nowhere to go.</div>
         <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">From Toast integration work</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
         <span class="badge badge-amber">High</span>
-        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Fix: Explain and redirect</div>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Constraint explained. Next step offered.</div>
       </div>
     </div>
 
     <div style="display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);padding:16px 20px;border-left:4px solid var(--amber);box-shadow:var(--shadow);">
       <div style="font-size:26px;text-align:center;">🍽️</div>
       <div>
-        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Multi-menu advantage lost in third party integrations</div>
-        <div style="font-size:12px;color:var(--gray-500);">Toast has best-in-class multi-menu support. Foodhub did not. Every Toast client had to manually collapse their menus. Hours of work per update.</div>
+        <div style="font-size:13px;font-weight:600;color:var(--gray-900);margin-bottom:3px;">Toast's multi-menu advantage lost in third party integrations</div>
+        <div style="font-size:12px;color:var(--gray-500);">Toast has best-in-class multi-menu support. Foodhub did not. Every Toast client had to manually consolidate menus. Hours of operator effort per menu change.</div>
         <div style="font-size:11px;color:var(--gray-400);margin-top:4px;">From Toast integration work</div>
       </div>
       <div style="text-align:right;flex-shrink:0;">
         <span class="badge badge-amber">High</span>
-        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Fix: Lead with differentiator</div>
+        <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:4px;">Lead with the differentiator in every integration</div>
       </div>
     </div>
 
@@ -333,10 +368,10 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
   <div style="background:var(--gray-900);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;gap:16px;">
     <div style="font-size:28px;flex-shrink:0;">🌙</div>
     <div>
-      <div style="font-size:13px;font-weight:600;color:white;margin-bottom:4px;">The insight behind all six findings</div>
-      <div style="font-size:13px;color:#94A3B8;line-height:1.6;">Toast's Cash Close was built for the finance team reviewing data the next morning. Nobody built it for the manager closing the restaurant at 11pm. Those are two completely different users. Close Night Mode fixes that.</div>
+      <div style="font-size:13px;font-weight:600;color:white;margin-bottom:4px;">The root cause behind all nine findings</div>
+      <div style="font-size:13px;color:#94A3B8;line-height:1.6;">Every failure above comes from the same place. Nobody defined what Net Sales means and made it consistent. Every channel, every device, every reprint calculates it slightly differently. Close Night Mode and the EOD Report fix this from two angles.</div>
     </div>
-    <button class="btn btn-toast" style="flex-shrink:0;" onclick="goTo('closenight')">See it &#8594;</button>
+    <button class="btn btn-toast" style="flex-shrink:0;" onclick="goTo('closenight')">Close Night Mode &#8594;</button>
   </div>
 </div>
 
@@ -781,87 +816,9 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
 
 <!-- VIEW 4: EOD REPORT -->
 <div id="view-eod" class="view">
-  <div class="eyebrow"><span></span>Scenario-Based PM Thinking</div>
-  <h2 class="pt">EOD Report — Real Scenarios, Real Fixes</h2>
-  <p class="ps">These are scenarios operators face every night. Each one exposes a product gap. Each one has a fix that is a product decision, not an engineering project.</p>
-
-  <!-- SCENARIO CARDS -->
-  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
-
-    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;box-shadow:var(--shadow);">
-      <div style="background:#FEF2F2;padding:10px 16px;border-bottom:1px solid #FECACA;display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:12px;font-weight:600;color:var(--red);">Scenario 1 — Net Sales mismatch</span>
-        <span class="badge badge-red">Cash Close</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-        <div style="padding:16px;border-right:1px solid var(--gray-200);">
-          <div style="font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">What the operator sees</div>
-          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">An operator contacts their support team because their end of day totals are not matching across locations. When they look at the report, they see two different Net Sales figures on the same printout. One section shows a lower number than the other. They do not know which one to use for accounting.</p>
-        </div>
-        <div style="padding:16px;background:var(--green-light);">
-          <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Why it happens and how to fix it</div>
-          <p style="font-size:13px;color:var(--gray-700);line-height:1.6;">One section deducts transaction fees. The other does not. The report uses the same label "Net Sales" for two different calculations without explaining the difference. Fix: one Net Sales figure, one formula, every deduction labelled with a tooltip explaining what it is and why it is deducted.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;box-shadow:var(--shadow);">
-      <div style="background:#FEF2F2;padding:10px 16px;border-bottom:1px solid #FECACA;display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:12px;font-weight:600;color:var(--red);">Scenario 2 — Tips total with no breakdown</span>
-        <span class="badge badge-red">Tips</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-        <div style="padding:16px;border-right:1px solid var(--gray-200);">
-          <div style="font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">What the operator sees</div>
-          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">The EOD report shows a single tips total. The operator needs to know how much came from card payments, how much from cash, and which staff members received what. They cannot answer a staff query about tips without manually cross-referencing three different reports.</p>
-        </div>
-        <div style="padding:16px;background:var(--green-light);">
-          <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Why it happens and how to fix it</div>
-          <p style="font-size:13px;color:var(--gray-700);line-height:1.6;">The tips module shows a total but no source breakdown. Fix: Tips Summary shows card tips and cash tips as separate line items with a drill-down by staff member. One tap answers any tip query without a support call.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;box-shadow:var(--shadow);">
-      <div style="background:var(--amber-light);padding:10px 16px;border-bottom:1px solid #FCD34D;display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:12px;font-weight:600;color:var(--amber);">Scenario 3 — Report changes when reprinted</span>
-        <span class="badge badge-amber">Data Integrity</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-        <div style="padding:16px;border-right:1px solid var(--gray-200);">
-          <div style="font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">What the operator sees</div>
-          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">An operator prints their EOD report at the end of their shift. The next morning they print the same report for the same date and it shows different totals. Orders have been added. The number has changed. They cannot explain to their accountant why the figures differ from the previous night.</p>
-        </div>
-        <div style="padding:16px;background:var(--green-light);">
-          <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Why it happens and how to fix it</div>
-          <p style="font-size:13px;color:var(--gray-700);line-height:1.6;">Third party orders, cancelled orders, and refunded orders are included or excluded differently depending on when the report runs. Fix: snapshot the report at close time. Any reprint shows the snapshot figures, frozen at the moment the day was closed. A clear label shows the report is a frozen snapshot.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;box-shadow:var(--shadow);">
-      <div style="background:var(--amber-light);padding:10px 16px;border-bottom:1px solid #FCD34D;display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:12px;font-weight:600;color:var(--amber);">Scenario 4 — Kiosk and third party orders missing</span>
-        <span class="badge badge-amber">Order Sources</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-        <div style="padding:16px;border-right:1px solid var(--gray-200);">
-          <div style="font-size:11px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">What the operator sees</div>
-          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">A restaurant running kiosks alongside a traditional POS prints their EOD report. Kiosk orders are missing entirely. The total does not match what the kiosk terminal shows. The operator cannot reconcile the day because one entire order channel is invisible to the report.</p>
-        </div>
-        <div style="padding:16px;background:var(--green-light);">
-          <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Why it happens and how to fix it</div>
-          <p style="font-size:13px;color:var(--gray-700);line-height:1.6;">The EOD report is built around POS orders only. Kiosk orders sync separately and are not included in the calculation. Fix: source filter at the top of the report. POS, kiosk, online, and marketplace shown as separate breakdowns. Total includes all sources with a clear per-source subtotal.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- LIVE EOD PROTOTYPE -->
   <div class="eyebrow"><span></span>Live Prototype</div>
-  <h2 class="pt" style="margin-bottom:6px;">What a Fixed EOD Report Looks Like</h2>
-  <p class="ps">Every module addresses a real scenario. Collapse any section by clicking the header. Drill into tips. Print the receipt.</p>
+  <h2 class="pt">EOD Report — Fixed and Interactive</h2>
+  <p class="ps">Working date, shift, and source filters. All modules collapsible. Sales Summary with every deduction labelled. Tips drill-down by staff. Payments with offline sync warning. Cash drawer with shortage explained. Print receipt frozen at print time.</p>
 
   <div style="background:var(--white);border-radius:var(--radius);border:1.5px solid var(--toast-mid);overflow:hidden;box-shadow:var(--shadow-md);">
     <!-- HEADER -->
@@ -1010,7 +967,7 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
 <div id="view-whyme" class="view">
   <div class="eyebrow"><span></span>Why Me</div>
   <h2 class="pt">The Candidate Toast Cannot Find Anywhere Else</h2>
-  <p class="ps">2 years integrating Toast with Foodhub. Direct UAT with real restaurant operators. Production failures personally investigated and resolved. Here is how every part of my background maps directly to this role.</p>
+  <p class="ps">8 years in restaurant technology. 10 POS systems integrated. I have worked directly with restaurant operators at end of day close across multiple countries. Here is how that experience maps to this role.</p>
 
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;">
     <div class="card" style="text-align:center"><div style="font-size:32px;margin-bottom:8px">🔌</div><div style="font-size:22px;font-weight:700;color:var(--toast);margin-bottom:4px">2 yrs</div><div style="font-size:12px;color:var(--gray-500)">Integrating Toast with Foodhub including production debugging</div></div>
@@ -1019,8 +976,8 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
   </div>
 
   <div class="adv-grid">
-    <div class="adv-row"><div class="adv-left"><span class="adv-icon">🔌</span><span class="adv-claim">I integrated Toast from the outside for 2 years</span></div><div class="adv-right">I know how Toast behaves when it talks to other systems. I know what breaks at the edges. I know what operators say when they think no one from Toast is listening. I know it from both sides of the integration boundary.</div></div>
-    <div class="adv-row"><div class="adv-left"><span class="adv-icon">🔍</span><span class="adv-claim">I personally investigated production payment failures</span></div><div class="adv-right">When webhook failures caused payments to go unconfirmed it was escalated to me personally. I checked manually, identified the root cause, and reached engineering with a specific diagnosis. That is Cash Management reliability ownership.</div></div>
+    <div class="adv-row"><div class="adv-left"><span class="adv-icon">🔌</span><span class="adv-claim">I integrated Toast from the outside and know how it behaves</span></div><div class="adv-right">I know how Toast behaves when it talks to other systems. I know what breaks at the edges. I know what operators say when they think no one from Toast is listening. I know it from both sides of the integration boundary.</div></div>
+    <div class="adv-row"><div class="adv-left"><span class="adv-icon">🔍</span><span class="adv-claim">I know exactly why EOD numbers do not match</span></div><div class="adv-right">When an operator says their totals are not matching I can tell them in two sentences which deductions are missing from which section and why. That is not guesswork. That is years of working inside restaurant POS systems across 10 integrations.</div></div>
     <div class="adv-row"><div class="adv-left"><span class="adv-icon">🍽️</span><span class="adv-claim">I did UAT with real restaurant operators at end of day</span></div><div class="adv-right">I watched operators copy numbers from Toast into Xero by hand. I heard them say their sales were not matching. I saw 3 days spent reconciling one week. That is not research. That is evidence I carried into Close Night Mode.</div></div>
     <div class="adv-row"><div class="adv-left"><span class="adv-icon">💳</span><span class="adv-claim">I owned a loyalty programme and watched it fail</span></div><div class="adv-right">Points miscalculated. Rewards expired unused. Operators had no idea who their best customers were. I know exactly what not to do for Memberships. That failure is more valuable than any success story I could tell.</div></div>
     <div class="adv-row"><div class="adv-left"><span class="adv-icon">⚡</span><span class="adv-claim">I built three working prototypes before applying</span></div><div class="adv-right">Close Night Mode, the reimagined report, and Owner Morning Cards all exist as working prototypes in this document. Bias for action is not a value I recite. It is how I work.</div></div>
@@ -1028,7 +985,7 @@ p.ps{font-size:13px;color:var(--gray-500);margin-bottom:22px;line-height:1.6;max
 
   <div class="closing">
     <h2>The One Thing I Would Tell Toast</h2>
-    <p>I spent 2 years integrating with Toast and sat with real restaurant operators at end of day close.</p>
+    <p>I have spent my career in restaurant technology. I have integrated Toast and worked directly with the operators who use it every night.</p>
     <p>The most common thing I heard was not about features. It was about time. Managers wanted to go home. They were stuck in a reporting system that was not built for them.</p>
     <p><strong>Close Night Mode came from watching that happen. Three questions. Two minutes. Day closed. Go home.</strong></p>
     <p>No POS system has built this because every PM focused on making the report smarter. I focused on making the report invisible for the person who never wanted to look at it in the first place.</p>
